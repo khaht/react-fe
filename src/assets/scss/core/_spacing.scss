@@ -1,0 +1,33 @@
+@mixin margin-bottom {
+	@include screen(xs) {
+		@for $i from 0 through 5 {
+			.mb-xs-#{$i} {
+				margin-bottom: #{$i}rem!important;
+			}
+		}
+	}
+	@include screen(md, min) {
+		@for $i from 6 through 10 {
+			.mb-md-#{$i} {
+				margin-bottom: #{$i}rem!important;
+			}
+		}
+	}
+	@include screen(lg, min) {
+		@for $i from 6 through 10 {
+			.mb-lg-#{$i} {
+				margin-bottom: #{$i}rem!important;
+			}
+		}
+	}
+	@include screen(sm, min) {
+		@for $i from 6 through 10 {
+			.mb-sm-#{$i} {
+				margin-bottom: #{$i}rem!important;
+			}
+		}
+	}
+}
+
+
+@include margin-bottom;

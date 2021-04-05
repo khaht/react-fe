@@ -1,0 +1,35 @@
+.list-group {
+	&.list-no-border .list-group-item{
+		border: none;
+	}
+	&.list-form {
+		position: relative;
+	}
+	&.list-form .ui-checkbox {
+		float: left;
+		margin-right: 30px;
+	}
+	&.list-info {
+		.list-group-item{
+			position: relative;
+		}
+		.thumb {
+			margin-right: 20px;
+			width: 50px;
+			vertical-align: top;
+			margin-top: 5px;
+		}
+		.list-content {
+			display: inline-block;
+		}
+		h3 {
+			margin-bottom: 5px;
+			margin-top: 0;
+		}
+		.corner-info {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+	}
+}

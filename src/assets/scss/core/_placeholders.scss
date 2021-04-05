@@ -1,0 +1,58 @@
+%text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+%text-truncate-webkit {
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+	overflow: hidden;
+	white-space: normal;
+}
+%background-cover {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+%extend-material-icons {
+	direction: ltr;
+	display: inline-block;
+	font-family: 'Material Icons';
+	font-size: 24px;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	line-height: 1;
+	text-transform: none;
+	white-space: nowrap;
+	word-wrap: normal;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+%clearfix {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+::placeholder{
+	color: #000 !important;
+	opacity: 0.3 !important;
+}
+::-webkit-input-placeholder{
+	color:#000 !important;
+	opacity: 0.3 !important;
+}
+:-ms-input-placeholder{
+	color:#000 !important;
+	opacity: 0.3 !important;
+}
+::-moz-placeholder{
+	color: #000 !important;
+	opacity: 0.3 !important;
+}
+:placeholder-shown {
+	text-overflow: ellipsis;
+}

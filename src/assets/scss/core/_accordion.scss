@@ -1,0 +1,36 @@
+$form-border : rgba(0,0,0,0.08);
+.accordion {
+	&.accordion-shadow {
+		@include box-shadow($accordion-shadow);
+	}
+	.card {
+		margin-bottom: 0;
+		border-color: $form-border;
+	}
+	.card > .card-header {
+		padding: 15px;
+		background-color: $white;
+		border-bottom: none;
+		line-height: 25px;
+	}
+	.card > .card-header:hover {
+		//background-color: $greynormal;
+	}
+	.card > .collapse {
+		border-top: $border-width solid $form-border;
+	}
+	.card > .collapse.show {
+		background-color: $greylight;
+		border-left: 3px solid $blue;
+		border-top: none;
+		position: relative;
+		@include arrow('top','center', 10px, 0px, $greynormal, #ddd, 2px);
+	}
+	button[data-toggle="collapse"]{
+		padding:0;
+		color: $black;
+	}
+	.card:last-child {
+		border-bottom: 1px solid $border-color;
+	}
+}

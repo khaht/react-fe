@@ -1,0 +1,225 @@
+$base-img-url: "../../images" !default;
+$assets-url: "../../assets" !default;
+// font
+$base-font-family: wf_segoe-ui_light,wf_segoe-ui_normal,"Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-ja-family: ‘Hiragino Kaku Gothic ProN’, ‘ヒラギノ角ゴ ProN W3’, Meiryo, メイリオ, wf_segoe-ui_light,wf_segoe-ui_normal,"Helvetica Neue", Helvetica, Arial, sans-serif !default;
+// color
+$white: #FFFFFF !default;
+$greylight: #f8f8f8 !default;
+$greynormal: #EEEEEE !default;
+$greybg: #E9E9E9 !default;
+$greydefault: #DDDDDD !default;
+$grey: #CCCCCC !default;
+$bluegreydefault: #edf2f7 !default;
+$darkgrey: #999999 !default;
+$darkergrey: #666666 !default;
+$blue:    #2196F3 !default;
+$darkblue:    #1976D2 !default;
+$lightblue: #40A6F7 !default;
+$blue-500:    #BBDEFB !default;
+$green: #28a745 !default;
+$darkgreen: #1C9437 !default;
+$lightgreen: #3CB056 !default;
+$red: #F44336 !default;
+$orange: #FF5722 !default;
+$darkorange: #DE3904 !default;
+$lightorange: #FA6839 !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$darkpink:    #D12674 !default;
+$lightpink: #F2529C !default;
+$yellow:  #ffc107 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+$black: #000000 !default;
+
+$color-master: #626262 !default;
+$color-white: #fff !default;
+$color-black: #000 !default;
+$color-success: #10cfbd !default;
+$color-complete : #48b0f7 !default;
+$color-primary: $orange !default;
+$color-warning: #f8d053 !default;
+$color-danger: #f55753 !default;
+$color-info: #3b4752 !default;
+
+//Mixing Color varriable for creating both light and dark colors
+$mix-percentage-dark: 81% !default;
+$mix-percentage-darker: 60% !default;
+$mix-percentage-light: 80% !default;
+$mix-percentage-lighter: 20% !default;
+
+// Lighter Grey colors
+$color-master-light:mix($color-master, #fff, 16%) !default;
+$color-master-lighter:mix($color-master, #fff, 9.5%) !default;
+$color-master-lightest:mix($color-master, #fff, 3%) !default;
+
+// Darker Grey colors
+$color-master-dark:mix($color-master, #000, 45%) !default;
+$color-master-darker:mix($color-master, #000, 27%) !default;
+$color-master-darkest:mix($color-master, #000, 18%) !default;
+
+//Lighter colors
+$color-success-light: mix($color-success, $color-white, $mix-percentage-light) !default;
+$color-success-lighter: mix($color-success, $color-white, $mix-percentage-lighter) !default;
+
+$color-complete-light: mix($color-complete, $color-white, $mix-percentage-light) !default;
+$color-complete-lighter: mix($color-complete, $color-white, $mix-percentage-lighter) !default;
+
+$color-primary-light: mix($color-primary, $color-white, $mix-percentage-light) !default;
+$color-primary-lighter: mix($color-primary, $color-white, $mix-percentage-lighter) !default;
+
+$color-warning-light: mix($color-warning, $color-white, $mix-percentage-light) !default;
+$color-warning-lighter: mix($color-warning, $color-white, $mix-percentage-lighter) !default;
+
+$color-danger-light: mix($color-danger, $color-white, $mix-percentage-light) !default;
+$color-danger-lighter: mix($color-danger, $color-white, $mix-percentage-lighter) !default;
+
+$color-info-light: mix($color-info, $color-white, $mix-percentage-light) !default;
+$color-info-lighter: mix($color-info, $color-white, $mix-percentage-lighter) !default;
+
+//Darker colors
+$color-success-dark: mix($color-success, $color-black, $mix-percentage-dark) !default;
+$color-success-darker: mix($color-success, $color-black, $mix-percentage-darker) !default;
+
+$color-complete-dark: mix($color-complete, $color-black, $mix-percentage-dark) !default;
+$color-complete-darker: mix($color-complete, $color-black, $mix-percentage-darker) !default;
+
+$color-primary-dark: mix($color-primary, $color-black, $mix-percentage-dark) !default;
+$color-primary-darker: mix($color-primary, $color-black, $mix-percentage-darker) !default;
+
+$color-warning-dark: mix($color-warning, $color-black, $mix-percentage-dark) !default;
+$color-warning-darker: mix($color-warning, $color-black, $mix-percentage-darker) !default;
+
+$color-danger-dark: mix($color-danger, $color-black, $mix-percentage-dark) !default;
+$color-danger-darker: mix($color-danger, $color-black, $mix-percentage-darker) !default;
+
+$color-info-dark: mix($color-info, $color-black, $mix-percentage-dark) !default;
+$color-info-darker: mix($color-info, $color-black, $mix-percentage-darker) !default;
+
+/* text color
+*/
+$text-color-primary: rgba($black, .87) !default;
+$text-color-sub: rgba($black, .54) !default;
+$text-color-inactive: rgba($black, .38) !default;
+
+$text-color-rev-primary: rgba($white, 1) !default;
+$text-color-rev-sub: rgba($white, .7) !default;
+$text-color-rev-inactive: rgba($white, .3) !default;
+
+$primary: $orange;
+$primary-hover: #FF5722 !default;
+$primary-click: #BF360C !default;
+$link: #2979FF !default;
+$secondary: $white;
+$success: $green;
+$danger: $red;
+$info: $darkgrey;
+$warning: $yellow;
+$text: $text-color-primary;
+
+// Body
+// --------------------------------------------------
+$body-background: $color-master-lightest !default;
+$body-color: $color-master !default;
+$body-font-family : $base-font-family !default;
+$body-font-size : 14px !default;
+
+/* padding
+*/
+//$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   17px !default;
+
+// $padding-lg-vertical:    28px !default;
+$padding-lg-horizontal:  28px !default;
+
+// $padding-sm-vertical:    5px !default;
+$padding-sm-horizontal:  16px !default;
+
+$padding-xs-vertical:       2px !default;
+$padding-xs-horizontal:     9px !default;
+
+// Panels
+$panel-border-color: rgba(0, 0, 0, 0.15) !default;
+$panel-padding: 20px !default;
+$panel-heading-padding: $panel-padding $panel-padding 15px $panel-padding !default;
+$panel-heading-min-height: 48px !default;
+$panel-condensed-heading-padding: 13px 13px 0 13px !default;
+$panel-condensed-body-padding: 13px !default;
+$panel-condensed-heading-min-height: 48px !default;
+
+//Forms
+$form-group-height: 54px !default;
+$form-control-border-color: rgba($color-black, .15) !default;
+
+// Layout
+// --------------------------------------------------
+$layout-header-height:60px !default;
+$layout-mobile-header-height:48px !default;
+$layout-mobile-logo-scale:0.8 !default;
+$layout-sidepanel-width-collapsed : 70px !default;
+$layout-sidepanel-width:280px !default;
+$layout-sidepanel-pin-width:250px !default;
+$layout-right-quickview-width: 285px !default;
+$layout-user-profile-margin:25px !default;
+$layout-container-fixed-lg: 1700px !default;
+$layout-gutter-sm : 5px !default;
+
+/* z-index
+*/
+// z-index scale
+$zIndex-0:   0;
+$zIndex-1:   100;
+$zIndex-2:   200;
+$zIndex-3:   300;
+$zIndex-4:   400;
+$zIndex-5:   500;
+$zIndex-6:   600;
+$zIndex-7:   700;
+$zIndex-8:   800;
+$zIndex-9:   900;
+$zIndex-10: 1000;
+
+//TODO: add all components
+// z-index applications
+$zIndex-sidebar : $zIndex-10;
+$zIndex-tooltips : $zIndex-10;
+$zIndex-quickview: $zIndex-10;
+$zIndex-horizontal-menu-mobile: $zIndex-10;
+$zIndex-notifications : $zIndex-9;
+$zIndex-navbar : $zIndex-8;
+$zIndex-dropdown : $zIndex-7;
+$zIndex-dropdownMask : $zIndex-6;
+$zIndex-portlet : $zIndex-6;
+
+/* hover
+*/
+$hover-default: #f8f9fa !default;
+
+/* gap
+*/
+$gap-vert-default: 24px; //only use for subsequent margin-top
+$gap-hort-default: 8px; //device by 2 = 16px
+
+
+$border-color: #dddddd !default;
+$border-width: 1px !default;
+$radius-default: 2px;
+$radius-image: 5px;
+
+/* shadow
+*/
+$card-shadow: 0 1px 1px 0 rgba(155,155,155,.08), 0 1px 3px 1px rgba(155,155,155,.16);
+$table-shadow: 0 1px 1px 0 rgba(155,155,155,.08), 0 1px 3px 1px rgba(155,155,155,.16);
+$accordion-shadow: 0 1px 1px 0 rgba(155,155,155,.08), 0 1px 3px 1px rgba(155,155,155,.16);
+$modal-shadow: 0 1px 1px 0 rgba(155,155,155,.08), 0 1px 3px 1px rgba(155,155,155,.16);
+
+/* text size
+*/
+$text-headline: 24px;
+$text-title: 20px;
+$text-subtitle: 16px;
+$text-body: 14px;
+$text-button: 14px;
+$text-cap: 12px;

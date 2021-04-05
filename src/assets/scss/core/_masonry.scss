@@ -1,0 +1,54 @@
+.masonry {
+	.grid-item {
+		margin: 0 10px 10px 0;
+		float: left;
+	}
+	&,
+	.grid-item,
+	.grid-item img {
+		-webkit-transition: opacity 0.4s;
+		-moz-transition: opacity 0.4s;
+		-ms-transition: opacity 0.4s;
+		transition: opacity 0.4s;
+	}
+	&.is-loaded,
+	.grid-item,
+	.grid-item img {
+		opacity: 1;
+	}
+	&,
+	.grid-item.is-loading img
+	.grid-item.is-loading {
+		opacity: 0;
+	}
+}
+
+//sample demo
+.demo-masonry {
+	.grid-item {
+		width: 250px;
+		background-color: #eee;
+		border:1px solid $border-color;
+		cursor: pointer;
+		&:hover:after {
+			content: "";
+			background-color: rgba(255,255,255, .5);
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&.ht200 {
+			height: 200px;
+		}
+		&.ht100 {
+			height: 100px;
+		}
+		&.ht300 {
+			height: 300px;
+		}
+	}
+}
+

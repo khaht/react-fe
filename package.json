@@ -1,0 +1,105 @@
+{
+  "name": "@app/react-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": {
+    "nohoist": [
+      "react-intl",
+      "@formatjs/*"
+    ]
+  },
+  "dependencies": {
+    "@formatjs/intl": "^1.8.0",
+    "@formatjs/intl-locale": "^2.4.17",
+    "@formatjs/intl-pluralrules": "^4.0.9",
+    "@formatjs/intl-relativetimeformat": "^8.1.4",
+    "@redux-offline/redux-offline": "^2.6.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0",
+    "connected-react-router": "^6.9.1",
+    "css-loader": "^5.1.2",
+    "eol": "^0.9.1",
+    "firebase": "^8.3.0",
+    "firebase-tools": "^9.6.1",
+    "fontfaceobserver": "^2.1.0",
+    "glob": "^7.1.6",
+    "google-sheet-translation-sync": "^2.1.2",
+    "history": "4.10.1",
+    "hoist-non-react-statics": "^3.3.2",
+    "i18next": "^20.1.0",
+    "i18next-scanner": "^3.0.0",
+    "immer": "^8.0.1",
+    "import-glob": "^1.5.0",
+    "invariant": "^2.2.4",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.21",
+    "node-sass": "^5.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-intl": "^5.13.0",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "4.0.3",
+    "react-select": "^4.2.1",
+    "react-toastify": "^7.0.3",
+    "reactstrap": "^8.9.0",
+    "redux": "^4.0.5",
+    "redux-dynamic-modules-core": "^5.2.3",
+    "redux-dynamic-modules-react": "^5.2.3",
+    "redux-dynamic-modules-saga": "^5.2.3",
+    "redux-saga": "^1.1.3",
+    "reselect": "^4.0.0",
+    "sanitize.css": "^12.0.1",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "styled-components": "^5.2.1",
+    "validator": "^13.5.2",
+    "vinyl": "^2.2.1",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "serve": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "i18n:scan": "i18next-scanner --config i18n-scanner/i18next-scanner.config.js",
+    "i18n:push": "node i18n-scanner/googlesheet/push.js",
+    "i18n:pull": "node i18n-scanner/googlesheet/pull.js",
+    "try:prod": "serve -s build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.1.1",
+    "craco-esbuild": "^0.2.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react-testing-library": "^8.0.1"
+  }
+}

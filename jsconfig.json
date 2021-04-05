@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "core/*": ["./src/core/*"],
+      "modules/*": ["./src/modules/*"],
+      "locales/*": ["./src/locales/*"],
+      "assets/*": ["./src/assets/*"]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
