@@ -1,7 +1,6 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import { DynamicModuleLoader } from 'redux-dynamic-modules-react';
 import { getStates } from './store/selectors';

@@ -25,6 +25,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
     'import/prefer-default-export': 0,
     'import/operator-linebreak': 0,
+    'import/no-dynamic-require': 0,
     'react/react-in-jsx-scope': 0,
     'react/no-array-index-key': 0,
     'max-len': 0,
@@ -42,6 +43,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     'react/prop-types': 0,
     'class-methods-use-this': 0,
+    'global-require': 0,
   },
   settings: {
     'import/resolver': {

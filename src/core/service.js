@@ -1,5 +1,4 @@
 import axios from 'axios';
-import CookiesModel from 'core/cookies';
 
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
@@ -46,13 +45,8 @@ export default class Service {
   ) {
     const { headers } = options;
     try {
-      const token = new CookiesModel().accessToken();
       const optHeaders = headers;
       // eslint-disable-next-line no-extra-boolean-cast
-      if (!!token) {
-        optHeaders['Authorization'] = `Bearer ${token}`;
-      }
-
       const opts = {
         url: action,
         method: options.method,

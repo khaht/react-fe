@@ -1,10 +1,10 @@
-import Home from 'modules/Home';
+import Auth from 'modules/Auth';
 import Layout from 'core/components/Layout';
 
 const routes = [
   {
-    component: Home,
-    path: '/',
+    component: Auth,
+    path: '/login',
     exact: true,
     meta: {
       requiredAuth: false,

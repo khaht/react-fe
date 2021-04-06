@@ -1,21 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import BlankLayout from 'core/components/BlankLayout';
-import { routes } from './routes';
+import { loadRoutes } from './routes';
 
 const PrivateRoute = (props) => {
-  const { component: Component, isAuth, ...rest } = props;
+  const { component: Component, layout: LayoutComponent, isAuth, ...rest } = props;
   const render = (props) => {
     if (!isAuth) {
-      return <Redirect to="/login" />;
+      return <Redirect to="/login" component={Component} />;
     }
     return <Component {...props} />;
   };
-  return <Route {...rest} render={render} />;
+  return (
+    <LayoutComponent {...rest}>
+      <Route {...rest} render={render} />
+    </LayoutComponent>
+  );
 };
 
-const AppRouter = ({ isAuth = false, ...rest }) => {
-  const respRoutes = routes.map((route, index) => {
+const PublicRoute = (props) => {
+  const { component: Component, layout: LayoutComponent, ...rest } = props;
+  const render = (props) => {
+    return <Component {...props} />;
+  };
+  return (
+    <LayoutComponent>
+      <Route {...rest} render={render} />
+    </LayoutComponent>
+  );
+};
+
+const AppRouter = ({ isAuth = false }) => {
+  const availableRoutes = [];
+  const [routes, setRoutes] = useState([]);
+  useEffect(async () => {
+    const routes = await loadRoutes();
+    setRoutes(routes);
+  }, []);
+
+  routes.forEach((route, idx) => {
     const {
       meta: { layout = undefined },
     } = route;
@@ -24,26 +47,30 @@ const AppRouter = ({ isAuth = false, ...rest }) => {
     if (!!!layout) {
       LayoutComponent = BlankLayout;
     }
-    if (route.meta.requiredAuth) {
-      return (
-        <LayoutComponent key={index} {...rest}>
-          <PrivateRoute
-            component={route.component}
-            to={route.path}
-            layout={route.meta.layout ? route.meta.layout : undefined}
-            exact={route.exact}
-            isAuth={isAuth}
-          />
-        </LayoutComponent>
+    if (!route.meta.requiredAuth) {
+      availableRoutes.push(
+        <PublicRoute
+          layout={LayoutComponent}
+          key={idx}
+          component={route.component}
+          path={route.path}
+          exact={route.exact}
+        />,
+      );
+    } else {
+      availableRoutes.push(
+        <PrivateRoute
+          key={idx}
+          component={route.component}
+          path={route.path}
+          exact={route.exact}
+          layout={LayoutComponent}
+          isAuth={isAuth}
+        />,
       );
     }
-    return (
-      <LayoutComponent key={index}>
-        <Route component={route.component} to={route.path} exact={route.exact} key={index} />
-      </LayoutComponent>
-    );
   });
-  return <Switch>{respRoutes}</Switch>;
+  return <Switch>{availableRoutes}</Switch>;
 };
 
 export default AppRouter;
