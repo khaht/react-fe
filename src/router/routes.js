@@ -1,10 +1,10 @@
 import NotFoundPage from 'modules/NotFoundPage';
 /**
- * liệt kê ra các module có thể có trong project
- * những module có tồn tại trong modules và trong modules/*
- * thì các routes trong config của chính nó sẽ được import vào
- * ngược lại nếu trong modules có mà trong modules/* không có
- * thì sẽ được bỏ qua
+ * Lists the modules available in the project
+ * Modules exist in modules and in modules/*
+ * then the routes in the config itself will be imported
+ * Else if there is in modules but not in modules/*
+ * will be ignored
  */
 const modules = ['Home', 'Auth', 'NotImplement'];
 
