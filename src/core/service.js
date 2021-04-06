@@ -36,14 +36,14 @@ export default class Service {
     return parts.join('&');
   };
 
-  rest = async (
+  async rest(
     action,
     params = {},
     options = {
       headers: {},
       method: 'post',
     },
-  ) => {
+  ) {
     const { headers } = options;
     try {
       const token = new CookiesModel().accessToken();
@@ -67,9 +67,9 @@ export default class Service {
     } catch (err) {
       throw err.response;
     }
-  };
+  }
 
-  postFormData = (action, data) => {
+  postFormData(action, data) {
     const headers = {
       'Content-Type': 'multipart/form-data',
     };
@@ -77,9 +77,9 @@ export default class Service {
       method: 'post',
       headers,
     });
-  };
+  }
 
-  get = (action, params = {}, options = {}) => {
+  get(action, params = {}, options = {}) {
     const { headers = {} } = options;
     const query = this.toQueryString(params);
     const path = query ? `${action}?${query}` : action;
@@ -91,7 +91,7 @@ export default class Service {
         headers,
       },
     );
-  };
+  }
 
   post(action, params = {}, options = {}) {
     const { headers = {} } = options;

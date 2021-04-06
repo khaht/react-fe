@@ -27,7 +27,7 @@ module.exports = {
     'import/operator-linebreak': 0,
     'react/react-in-jsx-scope': 0,
     'react/no-array-index-key': 0,
-    'import/max-length': 0,
+    'max-len': 0,
     'arrow-body-style': 0,
     'no-unused-vars': 'warn',
     'object-curly-newline': 0,
@@ -39,6 +39,8 @@ module.exports = {
     'no-prototype-builtins': 0,
     'prefer-template': 0,
     'lines-between-class-members': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/prop-types': 0,
     'class-methods-use-this': 0,
   },
   settings: {

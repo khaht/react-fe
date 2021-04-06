@@ -1,0 +1,14 @@
+@import '../../../../assets/scss/core/core.scss';
+
+.header {
+  padding: 5px 25px;
+  background: $white;
+  box-shadow: -1px 4px 10px -4px #0000001a
+}
+
+.right-profile {
+  .name {
+    padding-right: 5px;
+  }
+}
+

@@ -6,8 +6,11 @@ import FontFaceObserver from 'fontfaceobserver';
 import 'sanitize.css/sanitize.css';
 import 'assets/scss/index.scss';
 import App from 'modules/App';
+import LanguageProvider from 'modules/i18n/LanguageProvider';
 import reportWebVitals from './reportWebVitals';
 import configureStore, { history } from './store';
+// Import i18n messages
+import { appLocaleMap, translationMessages } from './modules/i18n/LanguageProvider/i18n';
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
@@ -20,28 +23,29 @@ openSansObserver.load().then(() => {
 
 const MOUNT_NODE = document.getElementById('root');
 
-const render = () => {
+const render = (msg) => {
   ReactDOM.render(
     <Provider store={configureStore()}>
-      <Router history={history}>
-        <App />
-      </Router>
+      <LanguageProvider messages={msg}>
+        <Router history={history}>
+          <App />
+        </Router>
+      </LanguageProvider>
     </Provider>,
     MOUNT_NODE,
   );
 };
 
-render();
-
-// if (module.hot) {
-//   // Hot reloadable React components and translation json files
-//   // modules.hot.accept does not accept dynamic dependencies,
-//   // have to be constants at compile-time
-//   module.hot.accept(['./i18n', 'modules/App'], () => {
-//     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-//     render(translationMessages);
-//   });
-// }
+render(translationMessages);
+if (module.hot) {
+  // Hot reloadable React components and translation json files
+  // modules.hot.accept does not accept dynamic dependencies,
+  // have to be constants at compile-time
+  module.hot.accept(['modules/i18n/LanguageProvider/i18n', 'modules/App'], () => {
+    ReactDOM.unmountComponentAtNode(MOUNT_NODE);
+    render(translationMessages);
+  });
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

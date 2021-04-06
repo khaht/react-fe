@@ -18,7 +18,7 @@ module.exports = {
       modules: resolveAliasPath('modules'),
       locales: resolveAliasPath('locales'),
       assets: resolveAliasPath('assets'),
-      routes: resolveAliasPath('routes'),
+      router: resolveAliasPath('router'),
     },
     configure: (webpackConfig, { env, paths }) => {
       return webpackConfig;

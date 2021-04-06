@@ -13,9 +13,9 @@ require('@formatjs/intl-pluralrules/locale-data/de'); // Add locale data for de
 require('@formatjs/intl-relativetimeformat/polyfill');
 require('@formatjs/intl-relativetimeformat/locale-data/de'); // Add locale data for de
 
-const enTranslationMessages = require('./locales/en_US/index.json');
-const jaTranslationMessages = require('./locales/ja_JP/index.json');
-const zhTranslationMessages = require('./locales/zh_TW/index.json');
+const enTranslationMessages = require('locales/en_US/index.json');
+const jaTranslationMessages = require('locales/ja_JP/index.json');
+const zhTranslationMessages = require('locales/zh_TW/index.json');
 
 const DEFAULT_LOCALE = 'en';
 
