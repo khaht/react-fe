@@ -1,6 +1,4 @@
-import axios from 'axios';
-
-axios.defaults.headers.post['Content-Type'] = 'application/json';
+import { createAxiosInstance } from './axios';
 
 export default class Service {
   headers = {};
@@ -10,18 +8,10 @@ export default class Service {
   constructor(options) {
     this.defaultOptions = { ...this.defaultOptions, ...options };
     const { namespace = null } = this.defaultOptions;
-    // Accept */*
-    axios.defaults.headers.common.Accept = '*/*';
-    const apiKey = process.env.REACT_APP_API_KEY || '';
     const endpoint = process.env.REACT_APP_API_URL || '';
     const baseURL = endpoint + (namespace ? `/${namespace}/` : '/');
-    this.axios = axios.create({
+    this.axios = createAxiosInstance({
       baseURL,
-      responseType: 'json',
-      headers: {
-        'x-api-key': apiKey,
-        'Access-Control-Allow-Origin': '*',
-      },
     });
   }
 
@@ -94,12 +84,4 @@ export default class Service {
       headers,
     });
   }
-
-  downloadFile = (action) => {
-    return axios({
-      url: action,
-      method: 'GET',
-      responseType: 'blob',
-    });
-  };
 }

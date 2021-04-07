@@ -9,10 +9,14 @@ class CookiesModel {
     Cookies.remove(KEY_APP_TOKEN);
     Cookies.remove(KEY_APP_TOKEN_EXP);
     Cookies.remove(KEY_APP_TYPE);
-  }
+  };
 
   storeAccessToken(value, expiration = 86400) {
     this.setKey(KEY_APP_TOKEN, value, expiration);
+  }
+
+  clearToken() {
+    Cookies.remove(KEY_APP_TOKEN);
   }
 
   accessToken() {
@@ -34,10 +38,13 @@ class CookiesModel {
       Cookies.set(key, value, { path: '/', expires });
     } else {
       Cookies.set(key, value, {
-        path: '/', expires, secure: true, sameSite: 'strict',
+        path: '/',
+        expires,
+        secure: true,
+        sameSite: 'strict',
       });
     }
-  }
+  };
 
   getKey = (key) => Cookies.get(key);
 }

@@ -1,0 +1,103 @@
+@import 'assets/scss/core/core.scss';
+
+/*------------------------------------------------------------------
+[1. Login]
+*/
+
+#root {
+  height: 100%;
+}
+
+.login-wrapper {
+  height: 100%;
+  //background-color: $color-primary;
+  & > * {
+    height: 100%;
+  }
+  .background {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-image:url('../../../assets/images/login/bg.jpg');
+    .backdrop {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      top: 0;
+      left: 0;
+      z-index: $zIndex-1;
+    }
+    & > img {
+      height: 100%;
+      opacity: 0.6;
+    }
+  }
+  .login-container.change-pass {
+    @media (max-width: 480px) {
+      padding-top: 15px;
+    }
+  }
+  .login-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    float: right;
+    padding: 60px 70px 0 70px;
+    background: rgba(245,246,250,.5);
+    @media (max-width: 480px) {
+      padding: 15px;
+      padding-top: 90px;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+  }
+  .bg-caption {
+    width: 100%;
+    position: relative;
+    z-index: $zIndex-2;
+    @include vertical(
+      $start-color: rgba(0, 0, 0, 0.1),
+      $end-color: rgba(0, 0, 0, 0.3),
+      $start-percent: 0%,
+      $end-percent: 100%
+    );
+  }
+}
+.register-container {
+  width: 550px;
+  margin: auto;
+  height: 100%;
+}
+
+
+
+/* Responsive handlers : Login
+------------------------------------
+*/
+
+@media (max-width: 768px) {
+  .login-wrapper {
+    .login-container {
+      width: 100%;
+    }
+  }
+  .register-container {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  .login-wrapper {
+    .login-container {
+      width: 100%;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import FontFaceObserver from 'fontfaceobserver';
+import { Locale } from 'cplus_common_library';
 import 'sanitize.css/sanitize.css';
 import 'assets/scss/index.scss';
 import App from 'modules/App';
@@ -24,10 +25,12 @@ openSansObserver.load().then(() => {
 const MOUNT_NODE = document.getElementById('root');
 
 const render = (msg) => {
+  const sysLanguage = localStorage.getItem('sysLanguage');
   ReactDOM.render(
     <Provider store={configureStore()}>
       <LanguageProvider messages={msg}>
         <Router history={history}>
+          <Locale locale={appLocaleMap[sysLanguage]} />
           <App />
         </Router>
       </LanguageProvider>

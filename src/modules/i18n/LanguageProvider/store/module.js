@@ -1,6 +1,6 @@
 import { intlReducer } from './reducer';
 
-export function getIntlModule() {
+export default function getIntlModule() {
   return {
     // Unique id of the module
     id: 'intlModule',

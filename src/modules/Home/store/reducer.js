@@ -7,7 +7,7 @@ export const INITIAL_STATE = {
   data1: '123',
 };
 
-export const homeReducer = produce((draft, { type, payload = {}, meta = {} }) => {
+export const homeReducer = produce((draft, { type, payload = {} }) => {
   switch (type) {
     case GET_HOME_SUCCESS:
       draft['data'] = payload;

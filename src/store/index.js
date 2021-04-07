@@ -13,14 +13,27 @@ const routeMiddleware = routerMiddleware(history);
 
 const middlewares = [getSagaExtension(), routeMiddleware];
 
+const importModules = (moduleNm) => {
+  try {
+    return require(`modules/${moduleNm}/store/module`);
+  } catch (error) {
+    return { notFound: {} };
+  }
+};
+
 export default function configureStore(initialState) {
+  const authModule = importModules('Auth');
+  const modules = [globalModule()];
+  if (authModule.default) {
+    modules.push(authModule.default());
+  }
   const store = createStore(
     {
       initialState,
       enhancements: [offline(offlineConfig)],
       extensions: middlewares,
     },
-    globalModule(),
+    ...modules,
   );
 
   // if (module.hot) {

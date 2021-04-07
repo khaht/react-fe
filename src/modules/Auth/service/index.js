@@ -1,15 +1,26 @@
-import axios from 'axios';
 import Service from 'core/service';
 import CookiesModel from 'core/cookies';
 
-axios.interceptors.request.use((config) => {
-  const token = new CookiesModel().accessToken();
-  config.headers.Authorization = token;
-  return config;
-});
-
 export default class AuthService extends Service {
-  getProfile = () => {
-    return this.get('/');
+  whiteList = ['login', 'register', 'forgot-password'];
+
+  constructor() {
+    super();
+    this.axios.interceptors.request.use((request) => {
+      const { url } = request;
+      if (this.whiteList.includes(url)) {
+        return request;
+      }
+      const token = new CookiesModel().accessToken();
+      request.headers['Authorization'] = `Bearer ${token}`;
+      return request;
+    });
+  }
+  getCurrentUser = () => {
+    return this.get('/me');
+  };
+
+  login = (user) => {
+    return this.post('login', user);
   };
 }

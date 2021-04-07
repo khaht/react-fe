@@ -1,17 +1,16 @@
-import { homeReducer } from './reducer';
-import homeSaga from './sagas';
+import { appReducer } from './reducer';
 
-export default function getHomeModule() {
+export function getAuthModule() {
   return {
     // Unique id of the module
-    id: 'home',
+    id: 'app',
     // Maps the Store key to the reducer
     reducerMap: {
-      home: homeReducer,
+      app: appReducer,
     },
     // This module uses redux-saga middleware
     // This property will be be used by the SagaExtension
-    // to run sagas for the moduleD
-    sagas: [homeSaga],
+    // to run sagas for the module
+    sagas: [],
   };
 }

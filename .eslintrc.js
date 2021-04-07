@@ -44,6 +44,9 @@ module.exports = {
     'react/prop-types': 0,
     'class-methods-use-this': 0,
     'global-require': 0,
+    'jsx-a11y/label-has-associated-control': 0,
+    'no-case-declarations': 0,
+    'no-extra-boolean-cast': 0,
   },
   settings: {
     'import/resolver': {

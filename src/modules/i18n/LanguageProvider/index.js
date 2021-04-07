@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { DynamicModuleLoader } from 'redux-dynamic-modules-react';
 import { CHANGE_LOCALE } from 'modules/i18n/LanguageProvider/store/constants';
-import { getIntlModule } from './store/module';
+import GetIntlModule from './store/module';
 import { makeSelectLocale } from './store/selectors';
 import { appLocales, DEFAULT_LOCALE } from './i18n';
 
@@ -22,7 +22,7 @@ export function LanguageProvider(props) {
   }
 
   return (
-    <DynamicModuleLoader modules={[getIntlModule()]}>
+    <DynamicModuleLoader modules={[GetIntlModule()]}>
       <IntlProvider locale={locale} key={locale} messages={messages[locale]}>
         {React.Children.only(children)}
       </IntlProvider>

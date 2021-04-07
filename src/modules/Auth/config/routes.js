@@ -1,14 +1,12 @@
-import Auth from 'modules/Auth';
-import Layout from 'core/components/Layout';
+import Login from 'modules/Auth/Login/loadable';
 
 const routes = [
   {
-    component: Auth,
+    component: Login,
     path: '/login',
     exact: true,
     meta: {
       requiredAuth: false,
-      layout: Layout,
     },
   },
 ];

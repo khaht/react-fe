@@ -7,7 +7,7 @@ const routes = [
     path: '/',
     exact: true,
     meta: {
-      requiredAuth: false,
+      requiredAuth: true,
       layout: Layout,
     },
   },

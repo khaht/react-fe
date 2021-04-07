@@ -1,11 +1,11 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import { DynamicModuleLoader } from 'redux-dynamic-modules-react';
-import { getAuthModule } from './store/module';
+import GetAuthModule from './store/module';
 
 const Home = () => {
   return (
-    <DynamicModuleLoader modules={[getAuthModule()]}>
+    <DynamicModuleLoader modules={[GetAuthModule()]}>
       <span>Auth</span>
     </DynamicModuleLoader>
   );

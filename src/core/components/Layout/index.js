@@ -1,41 +1,29 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 // import {
 //   makeSelectCurrentUser,
 //   makeSelectIsAuthenticate,
 // } from 'modules/App/selectors';
 import './index.scss';
 import CookiesModel from 'core/cookies';
-import fb from 'core/firebase';
+// import fb from 'core/firebase';
 // import LoginModel from 'modules/Login/model';
 // import { getUserInfo, updateAuthUser } from 'modules/App/actions';
 // import reducer from 'modules/App/reducer';
 // import saga from 'modules/App/saga';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
+import { actLogout } from 'modules/Auth/store/actions';
 import TopNav from './TopNav';
 
-const key = 'global';
+// const key = 'global';
 // function Layout({ currentUser, children, updateUser }) {
 function Layout({ children }) {
-  const history = useHistory();
-
+  const dispatch = useDispatch();
   const signOut = async () => {
-    // try {
-    //   if (currentUser.type === 'google') {
-    //     fb.signOut();
-    //   } else {
-    //     // await LoginModel.logout();
-    //     const cookies = new CookiesModel();
-    //     cookies.clearCookies();
-    //   }
-    // } catch (error) {
-    //   if (error) {
-    //     toast.error(error.message);
-    //   }
-    // }
-    // updateUser(null, true);
-    // history.push('/login');
+    dispatch(actLogout());
+    new CookiesModel().clearToken();
   };
 
   // const username = currentUser && currentUser.username ? currentUser.username : '';

@@ -1,7 +1,7 @@
 import { authReducer } from './reducer';
 import authSaga from './sagas';
 
-export function getAuthModule() {
+export default function getAuthModule() {
   return {
     // Unique id of the module
     id: 'auth',

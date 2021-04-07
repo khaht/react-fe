@@ -10,7 +10,7 @@ import { CHANGE_LOCALE } from './constants';
 import { DEFAULT_LOCALE } from '../i18n';
 
 export const INITIAL_STATE = {
-  locale: DEFAULT_LOCALE,
+  locale: localStorage.getItem('sysLanguage') || DEFAULT_LOCALE,
 };
 
 /* eslint-disable default-case, no-param-reassign */

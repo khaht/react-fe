@@ -7,11 +7,11 @@ const Services = new HomeService();
 // handler
 function* getHome() {
   try {
-    const request = yield call(Services.getHome);
+    // const request = yield call(Services.getHome);
     yield put(actGetHome('abc'));
   } catch (error) {
     // yield showError;
-    console.log(error);
+    // console.log(error);
   }
 }
 
